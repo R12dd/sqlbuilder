@@ -2,11 +2,11 @@
 
   <modelVersion>4.0.0</modelVersion>
   <groupId>ca.krasnay</groupId>
-  <artifactId>gama-sqlbuilder</artifactId>
+  <artifactId>gama-sql-builder</artifactId>
   <packaging>jar</packaging>
   <version>2.1-SNAPSHOT</version>
 
-  <name>gama-sqlbuilder</name>
+  <name>gama-sql-builder</name>
   <description>A lightweight library for building and executing SQL statements.</description>
   <url>https://github.com/jkrasnay/sqlbuilder</url>
 
