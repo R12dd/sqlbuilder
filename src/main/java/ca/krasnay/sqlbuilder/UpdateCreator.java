@@ -74,12 +74,11 @@ public class UpdateCreator extends AbstractSqlCreator {
     @Override
     public String toString() {
         ParameterizedPreparedStatementCreator ppsc = getPreparedStatementCreator();
-        StringBuilder sb = new StringBuilder(builder.toString());
+        StringBuilder sb = new StringBuilder();
+        sb.append("\r\n执行sql > ").append(builder.toString()).append("\r\n参数 > ");
         List<String> params = new ArrayList<String>(ppsc.getParameterMap().keySet());
         Collections.sort(params);
-        for (String s : params) {
-            sb.append(", ").append(s).append("=").append(ppsc.getParameterMap().get(s));
-        }
+        for (String s : params) sb.append(s).append("=").append(ppsc.getParameterMap().get(s)).append(", ");
         return sb.toString();
     }
 
