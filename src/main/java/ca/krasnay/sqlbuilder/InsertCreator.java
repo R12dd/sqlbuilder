@@ -1,5 +1,7 @@
 package ca.krasnay.sqlbuilder;
 
+import org.springframework.jdbc.core.PreparedStatementCreator;
+
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +9,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import org.springframework.jdbc.core.PreparedStatementCreator;
 
 /**
  * A Spring PreparedStatementCreator that you can use like an InsertBuilder.
@@ -58,10 +58,11 @@ public class InsertCreator implements PreparedStatementCreator, Serializable {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\r\n执行sql > ").append(builder.toString()).append("\r\n参数 > ");
+        sb.append("\r\n----------------------------------------\r\n执行sql > ").append(builder.toString()).append("\r\n参数 > ");
         List<String> params = new ArrayList<String>(ppsc.getParameterMap().keySet());
         Collections.sort(params);
         for (String s : params) sb.append(s).append("=").append(ppsc.getParameterMap().get(s)).append(", ");
+        sb.append("\r\n----------------------------------------");
         return sb.toString();
     }
 }
