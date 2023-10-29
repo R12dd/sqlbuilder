@@ -12,12 +12,12 @@ public interface Predicate {
      * parameters from the creator and set values for the parameters. This is
      * called by the creator when the predicate is added to it.
      */
-    public void init(AbstractSqlCreator creator);
+    void init(AbstractSqlCreator creator);
 
     /**
      * Returns an SQL expression representing the predicate. Parameters may be
      * included preceded by a colon.
      */
-    public String toSql();
+    String toSql();
 
 }

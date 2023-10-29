@@ -7,6 +7,6 @@ package ca.krasnay.sqlbuilder.orm;
  */
 public interface ConverterFactory {
 
-    public Converter<?> getConverter(Class<?> fieldClass);
+    Converter<?> getConverter(Class<?> fieldClass);
 
 }

@@ -18,7 +18,7 @@ public interface Dialect {
      *            Inner select statement, i.e. the one that returns the rows
      *            themselves.
      */
-    public String createCountSelect(String sql);
+    String createCountSelect(String sql);
 
     /**
      * Returns a SQL statement that returns a limited number of rows from an
@@ -33,7 +33,7 @@ public interface Dialect {
      * @param offset
      *            Index into the result set of the first row returned.
      */
-    public String createPageSelect(String sql, int limit, int offset);
+    String createPageSelect(String sql, int limit, int offset);
 
     /**
      * Returns an integer supplier representing a database sequence.
@@ -43,6 +43,6 @@ public interface Dialect {
      * @param sequenceName
      *            Name of the sequence.
      */
-    public Supplier<Integer> getSequence(DataSource dataSource, String sequenceName);
+    Supplier<Integer> getSequence(DataSource dataSource, String sequenceName);
 
 }

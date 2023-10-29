@@ -7,6 +7,6 @@ package ca.krasnay.sqlbuilder;
  */
 public interface Supplier<T> {
 
-    public T get();
+    T get();
 
 }

@@ -15,7 +15,7 @@ public interface Converter<T> {
      * @param fieldValue
      *            Java value to be converted. May be null.
      */
-    public Object convertFieldValueToColumn(T fieldValue);
+    Object convertFieldValueToColumn(T fieldValue);
 
     /**
      * Returns a Java value from a result set.
@@ -25,6 +25,6 @@ public interface Converter<T> {
      * @param columnLabel
      *            Label of the column with which to access the result set.
      */
-    public T getFieldValueFromResultSet(ResultSet rs, String columnLabel) throws SQLException;
+    T getFieldValueFromResultSet(ResultSet rs, String columnLabel) throws SQLException;
 
 }
