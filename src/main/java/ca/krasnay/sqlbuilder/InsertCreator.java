@@ -45,7 +45,7 @@ public class InsertCreator implements PreparedStatementCreator, Serializable {
     }
 
     public InsertCreator setRaw(String column, String value) {
-        builder.set(column, value);
+        builder.set("[" + column + "]", value);
         return this;
     }
 
