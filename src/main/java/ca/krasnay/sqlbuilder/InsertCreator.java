@@ -45,7 +45,10 @@ public class InsertCreator implements PreparedStatementCreator, Serializable {
     }
 
     public InsertCreator setRaw(String column, String value) {
-        builder.set("[" + column + "]", value);
+        if (column.equals("current")) {
+            column = "[" + column + "]";
+        }
+        builder.set(column, value);
         return this;
     }
 
