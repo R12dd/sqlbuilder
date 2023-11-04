@@ -61,11 +61,10 @@ public class InsertCreator implements PreparedStatementCreator, Serializable {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\r\n----------------------------------------\r\n执行sql > ").append(builder.toString()).append("\r\n参数 > ");
+        sb.append("SQL > ").append(builder.toString()).append(", Params > ");
         List<String> params = new ArrayList<String>(ppsc.getParameterMap().keySet());
         Collections.sort(params);
         for (String s : params) sb.append(s).append("=").append(ppsc.getParameterMap().get(s)).append(", ");
-        sb.append("\r\n----------------------------------------");
         return sb.toString();
     }
 }
